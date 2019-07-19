@@ -17,24 +17,8 @@
         @show
     </head>
     <body>
-        <div class="flex-center position-ref full-height main-color">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
-            <div id="app">
-                <top-component></top-component>
-            </div>
-
+        <div id="app">
+            <top-component></top-component>
         </div>
         <script src=" {{ mix('js/app.js') }} "></script>
     </body>

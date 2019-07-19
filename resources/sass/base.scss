@@ -30,9 +30,6 @@ html, body {
     top: 18px;
 }
 
-.content {
-    text-align: center;
-}
 
 .title {
     font-size: 5rem;
@@ -43,11 +40,9 @@ html, body {
 }
 .links {
     padding: 1rem;
-    button {
+    .nav-link {
         border-radius: 0.5em;
         border-style: none;
-        background-color: white;
-        color: $main;
         font-weight: 600;
         margin: 0.5rem;
         padding: 0.5rem 1rem;
@@ -60,7 +55,26 @@ html, body {
     margin-bottom: 30px;
 }
 
-.main-color {
+
+// Top Page start---------------------------------------------------------------
+#top {
     background-color: $main;
     color: white;
+    text-align: center;
+    .button-color {
+        background-color: white;
+        color: $main;
+    }
 }
+// Top Page end-----------------------------------------------------------------
+
+
+// History Page start-----------------------------------------------------------
+#history {
+    background-color: white;
+    .button-color {
+        background-color: $main;
+        color: white;
+    }
+}
+// History Page end-------------------------------------------------------------
