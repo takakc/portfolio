@@ -31,22 +31,11 @@
                     @endauth
                 </div>
             @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Portfolio
-                </div>
-                <div class="sub-title m-b-md">
-                    Kan
-                </div>
-
-                <div class="links">
-                    <a href="">Skill</a>
-                    <a href="">History</a>
-                    <a href="">Products</a>
-                    <a href="">Blog</a>
-                </div>
+            <div id="app">
+                <top-component></top-component>
             </div>
+
         </div>
+        <script src=" {{ mix('js/app.js') }} "></script>
     </body>
 </html>
