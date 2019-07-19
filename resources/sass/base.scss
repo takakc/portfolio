@@ -1,0 +1,66 @@
+// Variables
+@import 'variables';
+
+html, body {
+    background-color: #fff;
+    color: #636b6f;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 200;
+    height: 100vh;
+    margin: 0;
+}
+
+.full-height {
+    height: 100vh;
+}
+
+.flex-center {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.position-ref {
+    position: relative;
+}
+
+.top-right {
+    position: absolute;
+    right: 10px;
+    top: 18px;
+}
+
+.content {
+    text-align: center;
+}
+
+.title {
+    font-size: 5rem;
+}
+
+.sub-title {
+    font-size: 3rem;
+}
+.links {
+    padding: 1rem;
+    a {
+        border-radius: 0.5em;
+        background-color: white;
+        color: $main;
+        font-weight: 600;
+        margin: 0.5rem;
+        padding: 0.5rem 1rem;
+        letter-spacing: .1rem;
+        text-decoration: none;
+        text-transform: uppercase;
+    }
+}
+
+.m-b-md {
+    margin-bottom: 30px;
+}
+
+.main-color {
+    background-color: $main;
+    color: white;
+}
