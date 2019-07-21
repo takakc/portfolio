@@ -30,11 +30,6 @@ html, body {
     top: 18px;
 }
 
-
-.title {
-    font-size: 5rem;
-}
-
 .sub-title {
     font-size: 3rem;
 }
@@ -55,12 +50,31 @@ html, body {
     margin-bottom: 30px;
 }
 
+.sub-page {
+    padding: 10px;
+    .title {
+        font-size: 3rem;
+    }
+}
+
+// trasition start---------------------------------------------------------------
+.v-enter-active, .v-leave-active {
+    transition: opacity .5s;
+}
+.v-enter, .v-leave-to {
+    opacity: 0;
+}
+// trasition end-----------------------------------------------------------------
+
 
 // Top Page start---------------------------------------------------------------
 #top {
     background-color: $main;
     color: white;
     text-align: center;
+    .title {
+        font-size: 5rem;
+    }
     .button-color {
         background-color: white;
         color: $main;
@@ -72,6 +86,28 @@ html, body {
 // History Page start-----------------------------------------------------------
 #history {
     background-color: white;
+    dl {
+        margin: 0.5rem;
+        :nth-child(1) {
+            border-bottom: orange solid 2px;
+        }
+        :nth-child(3) {
+            border-bottom: green solid 2px;
+        }
+        :nth-child(5) {
+            border-bottom: blue solid 2px;
+        }
+        :nth-child(7) {
+            border-bottom: purple solid 2px;
+        }
+    }
+    .page-content {
+        .year {
+            width: auto;
+            padding: 0.5rem 0;
+            margin: 0.5rem 0;
+        }
+    }
     .button-color {
         background-color: $main;
         color: white;
