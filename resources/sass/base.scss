@@ -83,6 +83,25 @@ html, body {
 // Top Page end-----------------------------------------------------------------
 
 
+// Skill Page start-----------------------------------------------------------
+#skill {
+    background: linear-gradient(90deg,$main 0%,$main 30%,white 30%,white 100%);
+    .content {
+        .title {
+            color: white;
+        }
+        .item {
+            margin-left: 10%;
+            background-color: #dddddd;
+            width: 350px;
+            h4 {
+                margin: 0;
+            }
+        }
+    }
+}
+// Skill Page end-------------------------------------------------------------
+
 // History Page start-----------------------------------------------------------
 #history {
     background-color: white;
