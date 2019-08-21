@@ -4,8 +4,8 @@
             <div class="title m-b-md">
                 Skill
             </div>
-            <div class="item">
-                <h4>PHP</h4>
+            <h4>PHP</h4>
+            <div class="detail">
                 <h5>経験年数</h5>
                 <ul>
                     <li>5年</li>
@@ -19,6 +19,44 @@
                     <li>ZendFramework</li>
                     <li>Laravel 5.5～5.7</li>
                 </ul>
+            </div>
+            <h4>SQL</h4>
+            <div class="detail">
+                <h5>利用経験</h5>
+                <ul>
+                    <li>MySQL</li>
+                    <li>PostgreSQL</li>
+                </ul>
+                <h5>アピール</h5>
+                <p>取得とかでただ利用するだけでなく、発注関係のシステムでSQLのチューニングも経験があります。</p>
+            </div>
+            <h4>JavaScript</h4>
+            <div class="detail">
+                <h5>利用経験</h5>
+                <ul>
+                    <li>jQuery</li>
+                    <li>Vue.js</li>
+                </ul>
+                <h5>コメント</h5>
+                <p>Vue.jsは仕事での利用経験は半年ほどになります。後は自宅で利用して遊んでます。</p>
+            </div>
+            <h4>Server</h4>
+            <div class="detail">
+                <h5>利用経験</h5>
+                <ul>
+                    <li>Google Cloud Platform</li>
+                    <li>その他レンタルサーバ</li>
+                </ul>
+            </div>
+            <h4>Middleware</h4>
+            <div class="detail">
+                <h5>利用経験</h5>
+                <ul>
+                    <li>Docker</li>
+                </ul>
+                <h5>コメント</h5>
+                <p>仕事では運用がメインでしたが、家ではdocker-compose.ymlを作ってPHPの開発環境を作ったりしてました。</p>
+                <p>最近はLaravelを使っているので、laraDockばかり使ってます。</p>
             </div>
             <div class="links">
                 <router-link to="/" class="nav-link button-color">Top</router-link>
