@@ -1,5 +1,11 @@
 <template>
     <div id="history" class="sub-page">
+        <div id='header' class='sticky-top'>
+            <div class="back" @click="back()">＜ 戻る</div>
+            <div class="header-title m-b-md">
+                Portfolio
+            </div>
+        </div>
         <div class="page-content">
             <div class="title m-b-md">
                 History
@@ -50,6 +56,9 @@
         computed: {
         },
         methods: {
-        }
+            back () {
+                this.$router.push({ name: 'top' });
+            },
+        },
     }
 </script>
