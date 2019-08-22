@@ -10,7 +10,6 @@
             <div class="links">
                 <router-link to="/skill" class="nav-link button-color">Skill</router-link>
                 <router-link to="/history" class="nav-link button-color">History</router-link>
-                <router-link to="/products" class="nav-link button-color">Products</router-link>
             </div>
         </div>
     </div>
@@ -28,8 +27,6 @@
             skill: function () {
             },
             history: function () {
-            },
-            products: function () {
             },
         }
     }
