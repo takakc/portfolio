@@ -13,7 +13,7 @@
         <!-- Styles -->
         @section('css')
             <link rel="stylesheet" href="{{ mix('css/app.css') }}">
-            <link rel="stylesheet" href="{{ mix('css/base.css?' . time()) }}">
+            <link rel="stylesheet" href="{{ mix('css/base.css') }}">
         @show
     </head>
     <body>
