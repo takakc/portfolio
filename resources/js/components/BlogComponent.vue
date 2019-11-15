@@ -1,7 +1,7 @@
 <template>
     <div id="skill" class="sub-page">
         <div id='header' class='sticky-top'>
-            <div class="back" @click="back()">? ??</div>
+            <div class="back" @click="back()">＜ 戻る</div>
             <div class="header-title m-b-md">
                 Portfolio
             </div>
