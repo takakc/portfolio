@@ -28,6 +28,7 @@ import TopComponent from './components/TopComponent.vue';
 import HistoryComponent from './components/HistoryComponent.vue';
 import SkillComponent from './components/SkillComponent.vue';
 import ProductsComponent from './components/ProductsComponent.vue';
+import BlogComponent from './components/BlogComponent.vue';
 import ContactComponent from './components/ContactComponent.vue';
 
 const routes = [
@@ -50,6 +51,11 @@ const routes = [
         name: 'products',
         path: '/products',
         component: ProductsComponent
+    },
+    {
+        name: 'blog',
+        path: '/blog',
+        component: BlogComponent
     },
     {
         name: 'contact',

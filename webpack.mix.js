@@ -11,6 +11,26 @@ const mix = require('laravel-mix');
  |
  */
 
+mix.webpackConfig({
+  module: {
+    rules: [
+      {
+        test: /\.md$/,
+        exclude: /(node_modules|bower_components)/,
+        use: [
+          'vue-loader',
+          {
+            loader: 'markdown-to-vue-loader',
+            options: {
+              exportSource: true    // この設定でMarkdownのRawデータを読み込めるようにする
+            },
+          },
+        ],
+      },
+    ],
+  }
+});
+
 mix.js('resources/js/app.js', 'public/js')
-    .sass('resources/sass/app.scss', 'public/css')
-    .sass('resources/sass/base.scss', 'public/css');
+  .sass('resources/sass/app.scss', 'public/css')
+  .sass('resources/sass/base.scss', 'public/css');
