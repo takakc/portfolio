@@ -12,12 +12,12 @@
                     <template v-for="contact in contacts">
                         <template v-if="contact.direction === 1">
                             <li class='message left' :key="contact.id">
-                                <span>問い合わせ内容</span><br>{{ contact.message }}
+                                <p>問い合わせ内容</p>{{ contact.message }}
                             </li>
                         </template>
                         <template v-else>
                             <li class='message right' :key="contact.id">
-                                <span>回答</span><br>{{ contact.message }}
+                                <p>回答</p>{{ contact.message }}
                             </li>
                         </template>
                     </template>
