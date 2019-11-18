@@ -32,6 +32,7 @@ class ContactController extends Controller
     {
         $token = \Session::get('_token');
         $contacts = ContactModel::where('session', $token)
+            ->where('is_deleted', false)
             ->take(10)
             ->get();
 
