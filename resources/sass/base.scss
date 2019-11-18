@@ -183,32 +183,74 @@ html, body {
 // Contact Page start-----------------------------------------------------------
 #contact {
     background-color: white;
-    min-height: 100vh;
-    #inputArea {
-        border-top: #aaa solid 1px;
+    max-height: 100%;
+    overflow: scroll;
+    #messageArea {
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 1rem;
+            .message {
+                position: relative;
+                display: inline-block;
+                width: 80%;
+                padding: 1rem 2rem;
+                color: white;
+                -webkit-border-radius: 1rem;
+                -moz-border-radius: 1rem;
+                border-radius: 1rem;
+                span {
+                    font-size: 0.8rem;
+                }
+            }
+            .left {
+                margin: 1rem 20% 1rem 0;
+                background: $main;
+            }
+            .right {
+                margin: 1rem 0 1rem 20%;
+                background: $main;
+            }
+        }
+    }
+    #bottomArea {
+        background: white;
         width: 100%;
         position: absolute;
         bottom: 0;
-        padding: 1rem;
-        #inputBox {
-            float: left;
-            input {
-                border: solid 1px $main;
-                -webkit-border-radius: 3px;
-                -moz-border-radius: 3px;
-                border-radius: 3px;
-                vertical-align: middle;
-            }
+        #errorMessage {
+            color: red;
+            text-align: center;
         }
-        button {
-            float: right;
-            text-decoration: none;
-            color: #FFF;
-            border-style: none;
-            font-size: 1rem;
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
-            background-color: rgb(18, 133, 18);
+        #inputArea {
+            width: 100%;
+            padding: 1rem;
+            border-top: #aaa solid 1px;
+            #inputBox {
+                input {
+                    width: 100%;
+                    border: solid 1px $main;
+                    -webkit-border-radius: 3px;
+                    -moz-border-radius: 3px;
+                    border-radius: 3px;
+                    vertical-align: middle;
+                }
+            }
+            #sendButton {
+                width: 150px;
+                div {
+                    text-align: center;
+                    button {
+                        text-decoration: none;
+                        color: #FFF;
+                        border-style: none;
+                        font-size: 1rem;
+                        padding: 0.5rem 1rem;
+                        border-radius: 4px;
+                        background-color: rgb(18, 133, 18);
+                    }
+                }
+            }
         }
     }
 }
