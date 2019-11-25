@@ -33,4 +33,6 @@ mix.webpackConfig({
 
 mix.js('resources/js/app.js', 'public/js')
   .sass('resources/sass/app.scss', 'public/css')
-  .sass('resources/sass/base.scss', 'public/css');
+  .sass('resources/sass/base.scss', 'public/css')
+  .sass('resources/sass/loading.scss', 'public/css')
+  .sass('resources/sass/modal.scss', 'public/css');

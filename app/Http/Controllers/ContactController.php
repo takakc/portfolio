@@ -34,6 +34,7 @@ class ContactController extends Controller
         $contacts = ContactModel::where('session', $token)
             ->where('is_deleted', false)
             ->take(10)
+            ->orderBy('created_at', 'desc')
             ->get();
 
         return $contacts;
@@ -68,6 +69,9 @@ class ContactController extends Controller
         $contactModel->message = $request->message;
         $contactModel->direction = config('const.direction.sendAdmin');
         $contactModel->save();
+
+        // slackに通知
+        \Slack::send($contactModel->session . "\n" . $contactModel->message);
 
         return [
             'status' => 'success',

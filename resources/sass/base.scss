@@ -33,6 +33,7 @@ html, body {
 .sub-title {
     font-size: 3rem;
 }
+
 .links {
     padding: 1rem;
     .nav-link {
@@ -54,6 +55,10 @@ html, body {
     .title {
         font-size: 3rem;
     }
+}
+
+.error {
+    color: red;
 }
 
 #header {
@@ -183,8 +188,7 @@ html, body {
 // Contact Page start-----------------------------------------------------------
 #contact {
     background-color: white;
-    max-height: 100%;
-    overflow: scroll;
+    height: 100vh;
     #messageArea {
         ul {
             list-style: none;
@@ -213,45 +217,22 @@ html, body {
                 background: $main;
             }
         }
-    }
-    #bottomArea {
-        background: white;
-        width: 100%;
-        position: absolute;
-        bottom: 0;
-        #errorMessage {
-            color: red;
-            text-align: center;
+        .cautions {
+            margin: 10%;
         }
-        #inputArea {
-            width: 100%;
-            padding: 1rem;
-            border-top: #aaa solid 1px;
-            #inputBox {
-                input {
-                    width: 100%;
-                    border: solid 1px $main;
-                    -webkit-border-radius: 3px;
-                    -moz-border-radius: 3px;
-                    border-radius: 3px;
-                    vertical-align: middle;
-                }
-            }
-            #sendButton {
-                width: 150px;
-                div {
-                    text-align: center;
-                    button {
-                        text-decoration: none;
-                        color: #FFF;
-                        border-style: none;
-                        font-size: 1rem;
-                        padding: 0.5rem 1rem;
-                        border-radius: 4px;
-                        background-color: rgb(18, 133, 18);
-                    }
-                }
-            }
+    }
+
+    .modal_button {
+        width: 150px;
+        text-align: center;
+        button {
+            text-decoration: none;
+            color: #FFF;
+            border-style: none;
+            font-size: 1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            background-color: rgb(18, 133, 18);
         }
     }
 }
