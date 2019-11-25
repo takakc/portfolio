@@ -227,10 +227,8 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
 
-        /*
-         * Slack
-         */
         'Slack' => App\Services\Slack\SlackFacade::class,
+        'YamlFrontMatter' => Spatie\YamlFrontMatter\YamlFrontMatter::class,
     ],
 
 ];

@@ -12,6 +12,7 @@
 */
 Route::get('/get-contact/{token}', 'ContactController@getContact');
 Route::post('/post-contact', 'ContactController@postContact');
+Route::get('/get-blogs', 'BlogController@getBlog');
 
 Route::get('/{any}', function () {
     return view('index');
