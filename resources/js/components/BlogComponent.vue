@@ -9,10 +9,10 @@
         <div class="page-content">
             <div id='attributes'>
                 <template v-for="blogAttribute in blogAttributes">
-                    <div class='attribute' :key="blogAttribute.title">
+                    <router-link v-bind:to="{name: 'blog-detail',params: {name: blogAttribute.file_name}}" class='attribute' :key="blogAttribute.title">
                         <div class='attribute-date'>{{ blogAttribute.created_at }}</div>
                         <div class='attribute-title'>{{ blogAttribute.title }}</div>
-                    </div>
+                    </router-link>
                 </template>
             </div>
             <!-- <div v-html="compiledMarkdownText" /> -->

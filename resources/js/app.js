@@ -29,6 +29,7 @@ import HistoryComponent from './components/HistoryComponent.vue';
 import SkillComponent from './components/SkillComponent.vue';
 import ProductsComponent from './components/ProductsComponent.vue';
 import BlogComponent from './components/BlogComponent.vue';
+import BlogDetailComponent from './components/BlogDetailComponent.vue';
 import ContactComponent from './components/ContactComponent.vue';
 
 const routes = [
@@ -56,6 +57,11 @@ const routes = [
         name: 'blog',
         path: '/blog',
         component: BlogComponent
+    },
+    {
+        name: 'blog-detail',
+        path: '/blog-detail/:name',
+        component: BlogDetailComponent
     },
     {
         name: 'contact',

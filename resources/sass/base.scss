@@ -260,6 +260,9 @@ html, body {
             .attribute-title {
                 font-size: 1.2rem;
             }
+            &:hover {
+                text-decoration: none;
+            }
         }
     }
     .button-color {
@@ -268,3 +271,18 @@ html, body {
     }
 }
 // Blog Page end-------------------------------------------------------------
+
+
+// BlogDetail Page start-----------------------------------------------------------
+#blogDetail {
+    background-color: white;
+    .page-content {
+        margin: 2rem auto;
+        width: 80%;
+    }
+    .button-color {
+        background-color: $main;
+        color: white;
+    }
+}
+// BlogDetail Page end-------------------------------------------------------------
