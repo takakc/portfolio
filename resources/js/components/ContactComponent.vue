@@ -3,37 +3,35 @@
         <div id='header' class='sticky-top'>
             <div class="back" @click="back()">＜ 戻る</div>
             <div class="header-title m-b-md">
-                Portfolio
+                Contact お問合せ
             </div>
         </div>
-        <div class="modal_button"><button @click="openModal">問い合わせ</button></div>
+        <div class="modal_button"><button @click="openModal">お問合せ</button></div>
         <div class="page-content">
-            <div id='messageArea'>
-                <ul v-show="Object.keys(this.contacts).length > 0">
-                    <template v-for="contact in contacts">
-                        <template v-if="contact.direction === 1">
-                            <li class='message left' :key="contact.id">
-                                <p>問い合わせ内容</p>{{ contact.message }}
-                            </li>
-                        </template>
-                        <template v-else>
-                            <li class='message right' :key="contact.id">
-                                <p>回答</p>{{ contact.message }}
-                            </li>
-                        </template>
-                    </template>
+            <template v-show="Object.keys(this.contacts).length > 0">
+                <ul v-for="contact in contacts"
+                    :key="contact.id"
+                    class='message-list'>
+                    <li v-if="contact.direction === 1" class='message-list__message message-list__message--left'>
+                        <span>お問合せ内容</span><br>
+                        {{ contact.message }}
+                    </li>
+                    <li v-else class='message-list__message message-list__message--right'>
+                        <span>回答</span><br>
+                        {{ contact.message }}
+                    </li>
                 </ul>
-                <div v-show="Object.keys(this.contacts).length == 0" class='cautions'>
-                    上部の「問い合わせ」ボタンをからお問い合わせ内容を送信ください。<br>
-                    ブラウザのセッションを利用しているため、別のブラウザや端末に変更すると受信できません。<br>
-                    ご了承ください。
-                </div>
+            </template>
+            <div v-show="Object.keys(this.contacts).length == 0" class='cautions'>
+                上部の「お問合せ」ボタンをからお問合せ内容を送信ください。<br>
+                ブラウザのセッションを利用しているため、別のブラウザや端末に変更すると受信できません。<br>
+                ご了承ください。
             </div>
         </div>
         <div v-show="loading" class="loader">Loading...</div>
         <!-- コンポーネント MyModal -->
         <MyModal @close="closeModal" v-if="modal">
-            <p>問い合わせ</p>
+            <p>お問合せ</p>
             <div><textarea v-model="sendMessage"></textarea></div>
             <p v-show="errorDisplay" class='error'>{{errorMessage}}</p>
             <template slot="footer">
@@ -68,6 +66,7 @@
         methods: {
             // 初期実行
             init () {
+                // セッションを元に問合せ内容取得
                 const userToken = localStorage.getItem('userToken');
                 const url = '/get-contact/' + userToken;
                 axios.get(url).then(response => {

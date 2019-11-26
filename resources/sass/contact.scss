@@ -1,0 +1,53 @@
+// Variables
+@import 'variables';
+
+#contact {
+    background-color: white;
+    height: 100vh;
+    .page-content {
+        .message-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 1rem;
+            &__message {
+                position: relative;
+                display: inline-block;
+                width: 80%;
+                padding: 1rem 2rem;
+                color: white;
+                -webkit-border-radius: 1rem;
+                -moz-border-radius: 1rem;
+                border-radius: 1rem;
+                span {
+                    font-size: 0.8rem;
+                    margin-bottom: 0.5rem;
+                }
+                &--left {
+                    margin: 1rem 20% 1rem 0;
+                    background: $main;
+                }
+                &--right {
+                    margin: 1rem 0 1rem 20%;
+                    background: $main;
+                }
+            }
+        }
+        .cautions {
+            margin: 10%;
+        }
+    }
+
+    .modal_button {
+        width: 150px;
+        text-align: center;
+        button {
+            text-decoration: none;
+            color: #FFF;
+            border-style: none;
+            font-size: 1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            background-color: rgb(18, 133, 18);
+        }
+    }
+}

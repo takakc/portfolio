@@ -15,8 +15,14 @@
         @section('css')
             <link rel="stylesheet" href="{{ mix('css/app.css') }}">
             <link rel="stylesheet" href="{{ mix('css/base.css') }}">
+            <link rel="stylesheet" href="{{ mix('css/blog_detail.css') }}">
+            <link rel="stylesheet" href="{{ mix('css/blog.css') }}">
+            <link rel="stylesheet" href="{{ mix('css/contact.css') }}">
+            <link rel="stylesheet" href="{{ mix('css/history.css') }}">
             <link rel="stylesheet" href="{{ mix('css/loading.css') }}">
             <link rel="stylesheet" href="{{ mix('css/modal.css') }}">
+            <link rel="stylesheet" href="{{ mix('css/skill.css') }}">
+            <link rel="stylesheet" href="{{ mix('css/top.css') }}">
         @show
     </head>
     <body>

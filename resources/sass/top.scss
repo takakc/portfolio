@@ -1,0 +1,15 @@
+// Variables
+@import 'variables';
+
+#top {
+    background-color: $main;
+    color: white;
+    text-align: center;
+    .title {
+        font-size: 5rem;
+    }
+    .button-color {
+        background-color: white;
+        color: $main;
+    }
+}

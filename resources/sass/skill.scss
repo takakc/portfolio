@@ -1,0 +1,25 @@
+// Variables
+@import 'variables';
+
+#skill {
+    background: linear-gradient(90deg,$main 0%,$main 30%,white 30%,white 100%);
+    .skill-list {
+        padding: 10px;
+        &__title {
+            margin-left: 25%;
+            background-color: white;
+            border: solid 1px $main;
+            color: $main;
+            display: inline-block;
+            padding: 1rem 2rem;
+        }
+        &__detail {
+            margin: 2rem 0 2rem 30%;
+            padding: 1rem;
+            border-bottom: solid 1px $main;
+            p {
+                margin: 0 1rem;
+            }
+        }
+    }
+}

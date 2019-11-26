@@ -1,0 +1,33 @@
+// Variables
+@import 'variables';
+
+#blog {
+    background-color: white;
+    #attributes {
+        width: 80%;
+        margin: 0 auto;
+
+        .attribute {
+            display: inline-block;
+            padding: 0.5rem;
+            border-bottom: solid 1px $main;
+            width: 95%;
+            -webkit-transition: all .3s;
+            transition: all .3s;
+            cursor: pointer;
+            .attribute-date {
+                font-size: 0.8rem;
+            }
+            .attribute-title {
+                font-size: 1.2rem;
+            }
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+    .button-color {
+        background-color: $main;
+        color: white;
+    }
+}
