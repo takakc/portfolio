@@ -3,13 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\ContactModel;
+use App\Models\Contact;
 use App\Http\Requests\ContactRequest;
 
 class ContactController extends Controller
 {
     // お問い合わせテーブル
-    private $ContactModel;
+    private $Contact;
 
     /**
      * Create a new controller instance.
@@ -18,7 +18,7 @@ class ContactController extends Controller
      */
     public function __construct()
     {
-        $this->ContactModel = new ContactModel();
+        $this->Contact = new Contact();
     }
 
 
@@ -31,7 +31,7 @@ class ContactController extends Controller
     public function getContact(?string $token)
     {
         $token = \Session::get('_token');
-        $contacts = ContactModel::where('session', $token)
+        $contacts = Contact::where('session', $token)
             ->where('is_deleted', false)
             ->take(10)
             ->orderBy('created_at', 'desc')
@@ -64,14 +64,14 @@ class ContactController extends Controller
             return $return;
         }
 
-        $contactModel = $this->ContactModel;
-        $contactModel->session = $request->session()->get('_token');
-        $contactModel->message = $request->message;
-        $contactModel->direction = config('const.direction.sendAdmin');
-        $contactModel->save();
+        $contact = $this->Contact;
+        $contact->session = $request->session()->get('_token');
+        $contact->message = $request->message;
+        $contact->direction = config('const.direction.sendAdmin');
+        $contact->save();
 
         // slackに通知
-        \Slack::send($contactModel->session . "\n" . $contactModel->message);
+        // \Slack::send($contact->session . "\n" . $contact->message);
 
         return [
             'status' => 'success',
