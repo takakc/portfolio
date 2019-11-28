@@ -2,24 +2,37 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use YamlFrontMatter;
+use App\Repositories\BlogRepository;
 
 class BlogController extends Controller
 {
     /**
+     * ブログリポジトリの実装
+     *
+     * @var BlogRepository
+     */
+    private $blogRepository;
+
+
+    /**
+     * ブログコントローラインスタンスの生成
+     *
+     * @param  BlogRepository  $blog
+     * @return void
+     */
+    public function __construct(BlogRepository $blogRepository)
+    {
+        $this->blogRepository = $blogRepository;
+    }
+
+
+    /**
      * ブログ取得
      *
-     * @return object  contacts
+     * @return array  blog
      */
     public function getBlog()
     {
-        $markdownFilesPath = public_path() . '/assets/blogs/*';
-        foreach(glob($markdownFilesPath) as $file) {
-            $object = YamlFrontMatter::parse(file_get_contents($file));
-            $return[] = $object->matter();
-        }
-
-        return $return;
+        return $this->blogRepository->getAll();
     }
 }

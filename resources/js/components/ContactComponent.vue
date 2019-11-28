@@ -68,6 +68,9 @@
             init () {
                 // セッションを元に問合せ内容取得
                 const userToken = localStorage.getItem('userToken');
+                if (userToken == null) {
+                    return
+                }
                 const url = '/get-contact/' + userToken;
                 axios.get(url).then(response => {
                     let returnData = response.data;

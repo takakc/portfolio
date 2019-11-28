@@ -2,23 +2,29 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Models\Contact;
 use App\Http\Requests\ContactRequest;
+use App\Repositories\ContactRepository;
+use Illuminate\Http\Request;
+use Illuminate\Support\Collection;
 
 class ContactController extends Controller
 {
-    // お問い合わせテーブル
-    private $Contact;
+    /**
+     * Contactリポジトリの実装
+     *
+     * @var ContactRepository
+    */
+    private $contactRepository;
+
 
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(ContactRepository $contactRepository)
     {
-        $this->Contact = new Contact();
+        $this->contactRepository = $contactRepository;
     }
 
 
@@ -26,18 +32,13 @@ class ContactController extends Controller
      * お問い合わせ取得
      *
      * @param  string  $token
-     * @return object  contacts
+     * @return Collection  contacts
      */
-    public function getContact(?string $token)
+    public function getContact(?string $token): Collection
     {
         $token = \Session::get('_token');
-        $contacts = Contact::where('session', $token)
-            ->where('is_deleted', false)
-            ->take(10)
-            ->orderBy('created_at', 'desc')
-            ->get();
 
-        return $contacts;
+        return $this->contactRepository->getAll($token);
     }
 
 
@@ -64,14 +65,13 @@ class ContactController extends Controller
             return $return;
         }
 
-        $contact = $this->Contact;
-        $contact->session = $request->session()->get('_token');
-        $contact->message = $request->message;
-        $contact->direction = config('const.direction.sendAdmin');
-        $contact->save();
+        // 登録
+        $this->contactRepository->save($request);
 
         // slackに通知
-        // \Slack::send($contact->session . "\n" . $contact->message);
+        if(env('SLACK_URL')) {
+            \Slack::send($request->session()->get('_token') . "\n" . $request->message);
+        }
 
         return [
             'status' => 'success',
