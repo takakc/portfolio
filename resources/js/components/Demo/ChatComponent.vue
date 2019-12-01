@@ -1,28 +1,28 @@
 <template>
-    <div id="contact" class="sub-page">
+    <div id="chat" class="sub-page">
         <div id='header' class='sticky-top'>
             <div class="back" @click="back()">＜ 戻る</div>
             <div class="header-title m-b-md">
-                Contact お問合せ
+                Chat チャット
             </div>
         </div>
         <div class="modal_button"><button @click="openModal">お問合せ</button></div>
         <div class="page-content">
-            <template v-show="Object.keys(this.contacts).length > 0">
-                <ul v-for="contact in contacts"
-                    :key="contact.id"
+            <template v-show="Object.keys(this.chats).length > 0">
+                <ul v-for="chat in chats"
+                    :key="chat.id"
                     class='message-list'>
-                    <li v-if="contact.direction === 1" class='message-list__message message-list__message--left'>
+                    <li v-if="chat.direction === 1" class='message-list__message message-list__message--left'>
                         <span>お問合せ内容</span><br>
-                        {{ contact.message }}
+                        {{ chat.message }}
                     </li>
                     <li v-else class='message-list__message message-list__message--right'>
                         <span>回答</span><br>
-                        {{ contact.message }}
+                        {{ chat.message }}
                     </li>
                 </ul>
             </template>
-            <div v-show="Object.keys(this.contacts).length == 0" class='cautions'>
+            <div v-show="Object.keys(this.chats).length == 0" class='cautions'>
                 上部の「お問合せ」ボタンをからお問合せ内容を送信ください。<br>
                 ブラウザのセッションを利用しているため、別のブラウザや端末に変更すると受信できません。<br>
                 ご了承ください。
@@ -42,11 +42,11 @@
 </template>
 
 <script>
-    import MyModal from './Parts/ModalComponent'
+    import MyModal from '../Parts/ModalComponent'
 
     export default {
         components: { MyModal },
-        name: "ContactComponent",
+        name: "ChatComponent",
         data () {
             return {
                 modal: false,
@@ -55,7 +55,7 @@
                 errorMessage: "",
                 loading: false,
                 errorDisplay: false,
-                contacts: [],
+                chats: [],
             }
         },
         mounted() {
@@ -71,13 +71,13 @@
                 if (userToken == null) {
                     return
                 }
-                const url = '/get-contact/' + userToken;
+                const url = '/get-chat/' + userToken;
                 axios.get(url).then(response => {
                     let returnData = response.data;
                     if(returnData) {
-                        this.contacts = Object.assign(
+                        this.chats = Object.assign(
                             {},
-                            this.contacts,
+                            this.chats,
                             returnData
                         )
                     } else {
@@ -100,7 +100,7 @@
             // 送信ボタン押下
             doSend () {
                 this.loading = true;
-                const url = '/post-contact';
+                const url = '/post-chat';
                 let sendData = {
                     "message" : this.sendMessage,
                 };

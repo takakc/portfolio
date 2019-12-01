@@ -3,9 +3,8 @@
 namespace App\Repositories;
 
 use Illuminate\Support\Collection;
-use App\Entities\ContactEntity;
 
-interface ContactRepositoryInterface
+interface ChatRepositoryInterface
 {
     /**
      * お問合せ一覧取得

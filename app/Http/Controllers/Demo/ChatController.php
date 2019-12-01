@@ -1,20 +1,20 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Demo;
 
-use App\Http\Requests\ContactRequest;
-use App\Repositories\ContactRepository;
+use App\Http\Requests\ChatRequest;
+use App\Repositories\ChatRepository;
 use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
 
-class ContactController extends Controller
+class ChatController extends \App\Http\Controllers\Controller
 {
     /**
-     * Contactリポジトリの実装
+     * Chatリポジトリの実装
      *
-     * @var ContactRepository
+     * @var ChatRepository
     */
-    private $contactRepository;
+    private $chatRepository;
 
 
     /**
@@ -22,9 +22,9 @@ class ContactController extends Controller
      *
      * @return void
      */
-    public function __construct(ContactRepository $contactRepository)
+    public function __construct(ChatRepository $chatRepository)
     {
-        $this->contactRepository = $contactRepository;
+        $this->chatRepository = $chatRepository;
     }
 
 
@@ -32,13 +32,13 @@ class ContactController extends Controller
      * お問い合わせ取得
      *
      * @param  string  $token
-     * @return Collection  contacts
+     * @return Collection  chats
      */
-    public function getContact(?string $token): Collection
+    public function getChat(?string $token): Collection
     {
         $token = \Session::get('_token');
 
-        return $this->contactRepository->getAll($token);
+        return $this->chatRepository->getAll($token);
     }
 
 
@@ -47,17 +47,17 @@ class ContactController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      */
-    public function postContact(Request $request)
+    public function postChat(Request $request)
     {
         // エラーチェック
         $requestData['message'] = $request->message;
-        $ContactRequest = new ContactRequest;
+        $ChatRequest = new ChatRequest;
         $validator = \Validator::make(
             $requestData,
-            $ContactRequest->rules(),
-            $ContactRequest->messages()
+            $ChatRequest->rules(),
+            $ChatRequest->messages()
         );
-        $validator->setAttributeNames($ContactRequest->attributes());
+        $validator->setAttributeNames($ChatRequest->attributes());
         if ($validator->fails()) {
             // エラー時
             $return['status'] = 'error';
@@ -66,7 +66,7 @@ class ContactController extends Controller
         }
 
         // 登録
-        $this->contactRepository->save($request);
+        $this->chatRepository->save($request);
 
         // slackに通知
         if(env('SLACK_URL')) {

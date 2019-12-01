@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddColumnIsDeletedContactsTable extends Migration
+class AddColumnIsDeletedChatLogsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class AddColumnIsDeletedContactsTable extends Migration
      */
     public function up()
     {
-        Schema::table('contacts', function (Blueprint $table) {
+        Schema::table('chat_logs', function (Blueprint $table) {
             $table->boolean('is_deleted')->default(false)->after('direction')->comment('削除フラグ');
         });
     }
@@ -25,7 +25,7 @@ class AddColumnIsDeletedContactsTable extends Migration
      */
     public function down()
     {
-        Schema::table('contacts', function (Blueprint $table) {
+        Schema::table('chat_logs', function (Blueprint $table) {
             $table->dropColumn('is_deleted');
         });
     }

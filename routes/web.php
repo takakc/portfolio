@@ -10,8 +10,8 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/get-contact/{token}', 'ContactController@getContact');
-Route::post('/post-contact', 'ContactController@postContact');
+Route::get('/get-chat/{token}', 'Demo\ChatController@getChat');
+Route::post('/post-chat', 'Demo\ChatController@postChat');
 Route::get('/get-blogs', 'BlogController@getBlog');
 Route::get('/get-blog/{name}', 'BlogDetailController@getBlogDetail');
 

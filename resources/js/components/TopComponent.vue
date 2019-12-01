@@ -11,7 +11,7 @@
                 <router-link to="/skill" class="nav-link button-color">Skill</router-link>
                 <router-link to="/history" class="nav-link button-color">History</router-link>
                 <router-link to="/blog" class="nav-link button-color">Blog</router-link>
-                <router-link to="/contact" class="nav-link button-color">Contact</router-link>
+                <router-link to="/chat" class="nav-link button-color">Chat</router-link>
             </div>
         </div>
     </div>

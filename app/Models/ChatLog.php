@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Contact extends Model
+class ChatLog extends Model
 {
-    protected $table = 'contacts';
+    protected $table = 'chat_logs';
 }
