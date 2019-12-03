@@ -2,6 +2,10 @@
 @import 'variables';
 
 .modal {
+    .modal-title {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+    }
     &.modal-overlay {
         display: flex;
         align-items: center;
