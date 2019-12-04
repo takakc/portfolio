@@ -12,6 +12,7 @@
 */
 Route::get('/get-chat/{token}', 'Demo\ChatController@getChat');
 Route::post('/post-chat', 'Demo\ChatController@postChat');
+Route::post('/post-contact', 'ContactController@postContact');
 Route::get('/get-blogs', 'BlogController@getBlog');
 Route::get('/get-blog/{name}', 'BlogDetailController@getBlogDetail');
 

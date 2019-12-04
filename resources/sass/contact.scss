@@ -1,0 +1,43 @@
+// Variables
+@import 'variables';
+
+#contact {
+    height: 100%;
+    background-color: $main;
+    .page-content {
+        background-color: white;
+        margin: 5%;
+        padding: 5%;
+        .form-content {
+            position: relative;
+            width: 100%;
+            .contact {
+                font: 15px/24px sans-serif;
+                box-sizing: border-box;
+                width: 100%;
+                margin: 8px 0;
+                padding: 0.3em;
+                transition: 0.3s;
+                border: 1px solid #1b2538;
+                border-radius: 4px;
+                outline: none;
+                &:focus {
+                    border-color: $main;
+                }
+            }
+        }
+        .form-button {
+            text-align: center;
+            button {
+                text-decoration: none;
+                color: #FFF;
+                border-style: none;
+                font-size: 1rem;
+                padding: 0.5rem 1rem;
+                border-radius: 4px;
+                background-color: $main;
+                width: 150px;
+            }
+        }
+    }
+}
