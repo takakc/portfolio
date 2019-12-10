@@ -3,11 +3,13 @@
         <div id='header' class='sticky-top'>
             <div class="back" @click="back()">＜ 戻る</div>
             <div class="header-title m-b-md">
-                {{title}} - Blog 個人メモ
+                Blog 個人メモ
             </div>
         </div>
         <div class="page-content">
-            <div v-html="markdownText" />
+            <h1>{{matter.title}}</h1>
+            <p>{{matter.created_at}}</p>
+            <div v-html="markdownText" class='markdown-body' />
             <div class="links">
                 <router-link to="/" class="nav-link button-color">Top</router-link>
             </div>
@@ -22,7 +24,7 @@
         name: "BlogDetailComponent",
         data () {
             return {
-                title: '',
+                matter: [],
                 markdownText: '',
             }
         },
@@ -34,7 +36,8 @@
                 const fileName = this.$route.params['name']
                 const url = '/get-blog/' + fileName;
                 axios.get(url).then(response => {
-                    this.title = response.data.title
+                    this.matter.title = response.data.matter.title
+                    this.matter.created_at = response.data.matter.created_at
                     this.markdownText = marked(response.data.body)
                 }).catch(error => {
                     console.log(error);

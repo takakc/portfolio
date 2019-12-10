@@ -24,7 +24,7 @@ class BlogRepository implements BlogRepositoryInterface
     {
         $markdownFilesPath = config('const.blog_path') . $name . '.md';
         $object = YamlFrontMatter::parse(file_get_contents($markdownFilesPath));
-        $return['title'] = $object->matter('title');
+        $return['matter'] = $object->matter();
         $return['body'] = $object->body();
 
         return $return;
@@ -38,10 +38,12 @@ class BlogRepository implements BlogRepositoryInterface
     {
         $return = [];
         $markdownFilesPath = config('const.blog_path') . '*';
-        foreach(glob($markdownFilesPath) as $file) {
+        foreach (glob($markdownFilesPath) as $key => $file) {
             $object = YamlFrontMatter::parse(file_get_contents($file));
-            $return[] = $object->matter();
+            $createdArray[$key] = $object->matter('created_at');
+            $return[$key] = $object->matter();
         }
+        array_multisort($createdArray, SORT_DESC, $return);
 
         return $return;
     }

@@ -2,10 +2,47 @@
 @import 'variables';
 
 #blogDetail {
-    background-color: white;
+    background-color: rgb(190, 200, 255);
     .page-content {
-        margin: 2rem auto;
-        width: 80%;
+        background-color: white;
+        max-width: 980px;
+        @media (min-width:700px){
+            margin: 2rem auto 0;
+            padding: 2rem;
+        }
+        h2 {
+            margin: 1.5rem 0 1rem 0;
+            padding: 0.5rem 1rem;
+            background-color: $blog_sub;
+            color: white;
+        }
+        h3 {
+            margin: 1.5rem 0 1rem 0;
+            padding: 0.5rem 1rem;
+            border-bottom: $blog_sub solid 2px;
+        }
+        h4 {
+            margin: 1.5rem 0 1rem 0;
+            padding: 0.5rem 1rem;
+            color: $blog_sub;
+            font-weight: 600;
+        }
+        h5 {
+            padding: 0.5rem 1rem;
+            color: $blog_sub;
+            font-weight: 600;
+        }
+        pre {
+            background-color: rgb(231, 231, 231);
+            margin: 1rem 0.5rem;
+            padding: 1rem;
+        }
+        ul {
+            margin: 2rem;
+            ul {
+                margin: 0.5rem;
+            }
+        }
     }
     .button-color {
         background-color: $main;
