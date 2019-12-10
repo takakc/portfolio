@@ -18,6 +18,7 @@
             <link rel="stylesheet" href="{{ mix('css/blog_detail.css') }}">
             <link rel="stylesheet" href="{{ mix('css/blog.css') }}">
             <link rel="stylesheet" href="{{ mix('css/chat.css') }}">
+            <link rel="stylesheet" href="{{ mix('css/contact.css') }}">
             <link rel="stylesheet" href="{{ mix('css/history.css') }}">
             <link rel="stylesheet" href="{{ mix('css/loading.css') }}">
             <link rel="stylesheet" href="{{ mix('css/modal.css') }}">
