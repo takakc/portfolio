@@ -43,7 +43,9 @@ class BlogRepository implements BlogRepositoryInterface
             $createdArray[$key] = $object->matter('created_at');
             $return[$key] = $object->matter();
         }
-        array_multisort($createdArray, SORT_DESC, $return);
+        if ($return) {
+            array_multisort($createdArray, SORT_DESC, $return);
+        }
 
         return $return;
     }

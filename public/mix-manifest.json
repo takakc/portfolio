@@ -1,5 +1,14 @@
 {
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
-    "/css/base.css": "/css/base.css"
+    "/css/base.css": "/css/base.css",
+    "/css/blog_detail.css": "/css/blog_detail.css",
+    "/css/blog.css": "/css/blog.css",
+    "/css/chat.css": "/css/chat.css",
+    "/css/contact.css": "/css/contact.css",
+    "/css/history.css": "/css/history.css",
+    "/css/loading.css": "/css/loading.css",
+    "/css/modal.css": "/css/modal.css",
+    "/css/skill.css": "/css/skill.css",
+    "/css/top.css": "/css/top.css"
 }
