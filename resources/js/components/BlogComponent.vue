@@ -3,7 +3,7 @@
         <div id='header' class='sticky-top'>
             <div class="back" @click="back()">＜ 戻る</div>
             <div class="header-title m-b-md">
-                Blog 個人メモ
+                KanKan Blog 一覧
             </div>
         </div>
         <div class="page-content">
@@ -15,7 +15,6 @@
                     </router-link>
                 </template>
             </div>
-            <!-- <div v-html="compiledMarkdownText" /> -->
             <div class="links">
                 <router-link to="/" class="nav-link button-color">Top</router-link>
             </div>
