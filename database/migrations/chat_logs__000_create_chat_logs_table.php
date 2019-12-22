@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateContactsTable extends Migration
+class CreateChatLogsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,15 @@ class CreateContactsTable extends Migration
      */
     public function up()
     {
-        Schema::create('contacts', function (Blueprint $table) {
+        Schema::create('chat_logs', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('email')->comment('メールアドレス');
-            $table->string('title')->comment('タイトル');
+            $table->string('session')->comment('問い合わせ者のセッション');
             $table->string('message')->comment('内容');
+            $table->integer('direction')->comment('送信方向');
             $table->timestamps();
         });
 
-        DB::statement("ALTER TABLE contacts COMMENT 'お問い合わせ'");
+        DB::statement("ALTER TABLE chats COMMENT 'お問い合わせ'");
     }
 
     /**
@@ -31,6 +31,6 @@ class CreateContactsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('contacts');
+        Schema::dropIfExists('chat_logs');
     }
 }

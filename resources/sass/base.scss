@@ -33,6 +33,7 @@ html, body {
 .sub-title {
     font-size: 3rem;
 }
+
 .links {
     padding: 1rem;
     .nav-link {
@@ -54,6 +55,10 @@ html, body {
     .title {
         font-size: 3rem;
     }
+}
+
+.error {
+    color: red;
 }
 
 #header {
@@ -102,114 +107,3 @@ html, body {
     opacity: 0;
 }
 // trasition end-----------------------------------------------------------------
-
-
-// Top Page start---------------------------------------------------------------
-#top {
-    background-color: $main;
-    color: white;
-    text-align: center;
-    .title {
-        font-size: 5rem;
-    }
-    .button-color {
-        background-color: white;
-        color: $main;
-    }
-}
-// Top Page end-----------------------------------------------------------------
-
-
-// Skill Page start-----------------------------------------------------------
-#skill {
-    background: linear-gradient(90deg,$main 0%,$main 30%,white 30%,white 100%);
-    .page-content {
-        padding: 10px;
-        .title {
-            color: white;
-        }
-        h4 {
-            margin-left: 25%;
-            background-color: orange;
-            color: white;
-            display: inline-block;
-            padding: 1rem 2rem;
-        }
-        .detail {
-            margin: 2rem 0 2rem 30%;
-            padding: 1rem;
-            border-bottom: solid 1px $main;
-            p {
-                margin: 0 1rem;
-            }
-        }
-    }
-}
-// Skill Page end-------------------------------------------------------------
-
-// History Page start-----------------------------------------------------------
-#history {
-    background-color: white;
-    dl {
-        margin: 0.5rem;
-        :nth-child(1) {
-            border-bottom: orange solid 2px;
-        }
-        :nth-child(3) {
-            border-bottom: green solid 2px;
-        }
-        :nth-child(5) {
-            border-bottom: blue solid 2px;
-        }
-        :nth-child(7) {
-            border-bottom: purple solid 2px;
-        }
-    }
-    .page-content {
-        padding: 10px;
-        .year {
-            width: auto;
-            padding: 0.5rem 0;
-            margin: 0.5rem 0;
-        }
-    }
-    .button-color {
-        background-color: $main;
-        color: white;
-    }
-}
-// History Page end-------------------------------------------------------------
-
-// Contact Page start-----------------------------------------------------------
-#contact {
-    background-color: white;
-    min-height: 100vh;
-    #inputArea {
-        border-top: #aaa solid 1px;
-        width: 100%;
-        position: absolute;
-        bottom: 0;
-        padding: 1rem;
-        #inputBox {
-            float: left;
-            input {
-                border: solid 1px $main;
-                -webkit-border-radius: 3px;
-                -moz-border-radius: 3px;
-                border-radius: 3px;
-                vertical-align: middle;
-            }
-        }
-        button {
-            float: right;
-            text-decoration: none;
-            color: #FFF;
-            border-style: none;
-            font-size: 1rem;
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
-            background-color: rgb(18, 133, 18);
-        }
-    }
-}
-// Contact Page end-------------------------------------------------------------
