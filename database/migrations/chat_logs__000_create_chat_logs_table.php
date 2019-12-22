@@ -21,7 +21,7 @@ class CreateChatLogsTable extends Migration
             $table->timestamps();
         });
 
-        DB::statement("ALTER TABLE chats COMMENT 'お問い合わせ'");
+        DB::statement("ALTER TABLE chat_logs COMMENT 'お問い合わせ'");
     }
 
     /**
